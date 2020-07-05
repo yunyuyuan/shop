@@ -1,0 +1,170 @@
+#i-ev div {
+  display: flex;
+  align-items: center; }
+#i-ev > .head {
+  padding: 1rem 0; }
+  #i-ev > .head > select {
+    margin-left: 1rem;
+    font-size: 1.03rem; }
+    @media screen and (min-width: 768px) {
+      #i-ev > .head > select {
+        padding: 0.3rem 0.5rem; } }
+#i-ev > .body {
+  flex-direction: column; }
+  #i-ev > .body > span {
+    font-size: 1.02rem;
+    padding-left: 0.6rem;
+    margin: 0 auto 0 0.8rem; }
+    #i-ev > .body > span > b {
+      margin: 0 0.3rem;
+      font-size: 1.1em;
+      color: red; }
+  #i-ev > .body > ul {
+    list-style: none;
+    width: 100%; }
+    #i-ev > .body > ul > li {
+      border: 1px solid;
+      padding: 0 0.4rem 0.8rem 0.4rem;
+      margin: 1rem 0.3rem;
+      background: white;
+      display: flex;
+      flex-direction: column; }
+      #i-ev > .body > ul > li:hover {
+        border-color: red; }
+      #i-ev > .body > ul > li > .head {
+        border-bottom: 1px solid #a2a2a2; }
+        #i-ev > .body > ul > li > .head > a {
+          text-decoration: none;
+          color: black;
+          font-size: 0.98rem;
+          padding: 0.4rem 0.3rem; }
+          #i-ev > .body > ul > li > .head > a:hover {
+            text-decoration: underline;
+            color: red; }
+          #i-ev > .body > ul > li > .head > a:before {
+            font-family: var(--ico-font);
+            content: var(--ico-store);
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-right: 0.3rem;
+            color: #0300ff; }
+        #i-ev > .body > ul > li > .head > button {
+          margin-left: auto;
+          font-size: 1.02rem;
+          font-weight: bold; }
+          #i-ev > .body > ul > li > .head > button[state='3'] {
+            background: #6056ff;
+            color: white; }
+            #i-ev > .body > ul > li > .head > button[state='3']:hover {
+              background: #554ce2; }
+          #i-ev > .body > ul > li > .head > button[state='4'] {
+            background: transparent;
+            color: #00cb12;
+            border: none;
+            cursor: initial; }
+      #i-ev > .body > ul > li > .body > .goods {
+        flex-wrap: wrap; }
+        #i-ev > .body > ul > li > .body > .goods > a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0.3rem 0.5rem;
+          border: 1px solid gray;
+          border-radius: 0.2rem;
+          margin: 0.3rem 0.5rem;
+          text-decoration: none;
+          width: 10rem; }
+          #i-ev > .body > ul > li > .body > .goods > a > img {
+            height: 5rem;
+            width: 5rem;
+            object-fit: contain;
+            border: 1px solid gray; }
+          #i-ev > .body > ul > li > .body > .goods > a > span {
+            color: black;
+            font-size: 0.92rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; }
+          #i-ev > .body > ul > li > .body > .goods > a:hover {
+            border-color: black; }
+  #i-ev > .body > .fixed-div > .wrap > .main {
+    flex-direction: column;
+    max-height: 95%;
+    overflow-y: auto;
+    overflow-x: hidden; }
+    #i-ev > .body > .fixed-div > .wrap > .main > .head {
+      width: 100%;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid gray;
+      justify-content: center; }
+      #i-ev > .body > .fixed-div > .wrap > .main > .head > b {
+        font-size: 1.15rem; }
+    #i-ev > .body > .fixed-div > .wrap > .main > .body {
+      flex-direction: column;
+      width: 100%; }
+      #i-ev > .body > .fixed-div > .wrap > .main > .body > .store {
+        padding: 0.5rem 0; }
+        #i-ev > .body > .fixed-div > .wrap > .main > .body > .store > b {
+          color: #ff4c20;
+          font-size: 1.1rem;
+          width: 3rem; }
+      #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods {
+        flex-direction: column;
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+        border: 1px solid gray;
+        margin: 0.2rem 0; }
+        #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods:hover {
+          border-color: #ff6d6d; }
+        #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .info {
+          width: 100%;
+          justify-content: center; }
+          #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .info > img {
+            width: 5rem;
+            height: 5rem;
+            object-fit: contain;
+            border: 1px solid gray; }
+          #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .info > div {
+            flex-direction: column; }
+            #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .info > div > span {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2; }
+              #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .info > div > span:last-of-type {
+                color: #636363; }
+        #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .-star {
+          margin: 0.3rem 0; }
+          #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .-star > span {
+            margin: 0 0.4rem; }
+          #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .-star > b {
+            margin-left: 0.6rem;
+            font-size: 1.1rem;
+            color: #ff8616;
+            width: 5rem; }
+        #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .txt {
+          width: 90%; }
+          #i-ev > .body > .fixed-div > .wrap > .main > .body > .goods > .txt > textarea {
+            width: 100%;
+            padding: 0.2rem;
+            font-size: 0.95rem;
+            height: 6rem; }
+    #i-ev > .body > .fixed-div > .wrap > .main > .submit {
+      margin: 1rem 0;
+      width: 100%;
+      justify-content: center; }
+      #i-ev > .body > .fixed-div > .wrap > .main > .submit > button {
+        background: #4f6eff;
+        box-shadow: 0 0 0.6rem gray;
+        color: white;
+        font-size: 1.08rem;
+        padding: 0.4rem 0.8rem; }
+        #i-ev > .body > .fixed-div > .wrap > .main > .submit > button:hover {
+          background: #4561e1; }
+  #i-ev > .body > .turn-page {
+    margin: 0 auto; }
+
+/*# sourceMappingURL=ev.css.map */

@@ -1,0 +1,199 @@
+@import "plugin/public";
+#container{
+  align-items: flex-start !important;
+}
+#store-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  width: 100%;
+  margin: 1.5rem 0;
+  max-width: 75rem;
+  div {
+    display: flex;
+    align-items: center;
+  }
+  >div{
+    background: white;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: calc(100% - 2rem);
+    &.head{
+      max-width: 50rem;
+      >img{
+        width: 12rem;
+        height: 12rem;
+        object-fit: contain;
+        border: 1px solid gray;
+      }
+      >.detail{
+        flex-direction: column;
+        flex-grow: 1;
+        margin: 0 1rem;
+        >*{
+          margin: 0.5rem 0;
+        }
+        >.name{
+          font-size: 1.08rem;
+          @include text-overflow(2);
+        }
+        >.num-info{
+          align-items: center;
+          >span{
+            font-size: 0.95rem;
+            color: #575757;
+            padding: 0 0.8rem;
+            &:last-of-type{
+              border-left: 1px solid gray;
+            }
+            >b{
+              margin: 0 0.3rem;
+              color: black;
+            }
+          }
+        }
+        >.star-info{
+          >b{
+            margin-left: 0.5rem;
+            font-size: 1.3rem;
+            color: #ffa124;
+          }
+          >span{
+            margin-left: 0.8rem;
+            color: #575757;
+            >b{
+              color: black;
+              margin: 0 0.3rem;
+            }
+          }
+        }
+        >button{
+          margin: 0 auto;
+          background: #4f6eff;
+          color: white;
+          font-size: 1.05rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          padding: 0.5rem 1.2rem;
+          width: 8rem;
+          &:before{
+            font-family: var(--ico-font);
+            content: var(--ico-fav);
+            font-size: 1.2rem;
+          }
+          &:hover{
+            background: #4764e7;
+          }
+          &.faved{
+            background: #cccccc;
+            color: black;
+            &:hover{
+              background: #b7b7b7;
+            }
+          }
+        }
+      }
+    }
+    &.body{
+      flex-direction: column;
+      max-width: 100rem;
+      >div{
+        width: 100%;
+      }
+      >.head{
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        @include phone_handle{
+          justify-content: center;
+        }
+        >select{
+          padding: 0.2rem 0.3rem;
+          margin: 0 0.5rem;
+        }
+        >.search{
+          display: flex;
+          border-radius: 0.2rem;
+          background: #e5e5e5;
+          padding: 0.4rem;
+          >input{
+            background: transparent;
+            font-size: 1rem;
+            border: none;
+          }
+          >span{
+            &:before{
+              font-family: var(--ico-font);
+              content: var(--ico-search);
+              font-size: 1.5rem;
+              cursor: pointer;
+            }
+          }
+        }
+        >span{
+          @include phone_handle{
+            width: 100%;
+            text-align: center;
+            margin: 0.5rem 0 0 0;
+          }
+          margin: 0 0.2rem 0 auto;
+          font-size: 0.95rem;
+          >b{
+            font-size: 1.1em;
+            color: #ff3738;
+            margin: 0 0.3rem;
+          }
+        }
+      }
+      >.body{
+        flex-direction: column;
+        >table{
+          border-collapse: collapse;
+          border: 1px solid #6e6e6e;
+          border-radius: 0.6rem;
+          width: 100%;
+          tr{
+            border-bottom: 1px solid gray;
+            >td{
+              max-width: 50%;
+              text-align: center;
+              >.star{
+                margin: 0 auto;
+              }
+              >img{
+                width: 6rem;
+                height: 6rem;
+                object-fit: contain;
+                border: 1px solid gray;
+              }
+              >a{
+                text-decoration: none;
+                color: black;
+                @include text-overflow(4);
+                &:hover{
+                  color: #ff2f2f;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+          >thead{
+            background: #4f6eff;
+            color: white;
+            td{
+              padding: 0.5rem 0;
+            }
+          }
+          >tbody{
+
+          }
+        }
+        >.turn-page{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

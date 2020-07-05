@@ -1,0 +1,131 @@
+#home {
+  display: flex;
+  flex-direction: column; }
+  @media screen and (max-width: 768px) {
+    #home {
+      width: 100%; } }
+  #home div {
+    display: flex;
+    align-items: center; }
+  #home > .head {
+    background: white;
+    justify-content: center;
+    padding: 1rem 0; }
+    #home > .head > img {
+      width: 100%;
+      object-fit: contain; }
+  #home > .body {
+    background: white;
+    padding: 1rem;
+    width: 55rem;
+    flex-direction: column;
+    justify-content: center; }
+    @media screen and (max-width: 768px) {
+      #home > .body {
+        width: 100%;
+        padding: 1rem 0; } }
+    #home > .body > div {
+      flex-direction: column; }
+      #home > .body > div > span {
+        padding: 0.5rem 0;
+        background: #c7c6ff;
+        font-size: 1.1rem;
+        align-items: center;
+        display: flex;
+        width: 100%; }
+        #home > .body > div > span:before {
+          margin-right: 0.6rem;
+          font-family: var(--ico-font);
+          font-size: 2rem;
+          content: var(--ico-new); }
+      #home > .body > div:last-of-type > span:before {
+        content: var(--ico-hot); }
+      #home > .body > div > div {
+        flex-wrap: wrap; }
+        #home > .body > div > div > .goods {
+          width: 15rem;
+          transition: all .2s linear;
+          background: white;
+          border: 1px solid #cacaca;
+          position: relative;
+          border-radius: 0.3rem;
+          margin: 1rem;
+          flex-direction: column;
+          align-items: flex-start; }
+          #home > .body > div > div > .goods:hover {
+            box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2); }
+            #home > .body > div > div > .goods:hover > span {
+              opacity: 1; }
+          @media screen and (max-width: 768px) {
+            #home > .body > div > div > .goods {
+              width: calc(50% - 2rem - 2px); }
+              #home > .body > div > div > .goods img {
+                height: calc(50% - 2rem - 2px); } }
+          #home > .body > div > div > .goods > span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.85);
+            transition: all .2s linear;
+            color: white;
+            font-size: 0.9rem;
+            padding: 0 0.2rem; }
+            @media screen and (min-width: 768px) {
+              #home > .body > div > div > .goods > span {
+                opacity: 0; } }
+          #home > .body > div > div > .goods > a {
+            color: black;
+            text-decoration: none;
+            flex-direction: column; }
+            #home > .body > div > div > .goods > a:hover {
+              text-decoration: underline;
+              color: red; }
+            #home > .body > div > div > .goods > a > img {
+              width: 100%;
+              height: 15rem;
+              object-fit: contain;
+              border-bottom: 1px solid #bbb; }
+            #home > .body > div > div > .goods > a > span {
+              text-align: center;
+              padding: 0.2rem 0;
+              font-size: 0.95rem;
+              line-height: 1.2rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2; }
+          #home > .body > div > div > .goods > .mid {
+            justify-content: space-between;
+            margin: auto 0;
+            padding: 0 0.5rem;
+            width: calc(100% - 1rem); }
+            #home > .body > div > div > .goods > .mid > span {
+              font-size: 1.2rem;
+              color: red; }
+          #home > .body > div > div > .goods > .bottom {
+            margin-bottom: 0.2rem; }
+            #home > .body > div > div > .goods > .bottom > a {
+              font-size: 0.9rem;
+              color: black;
+              text-decoration: none;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1; }
+              #home > .body > div > div > .goods > .bottom > a:hover {
+                text-decoration: underline; }
+              #home > .body > div > div > .goods > .bottom > a:before {
+                font-family: var(--ico-font);
+                font-size: 1.3rem;
+                font-weight: bold;
+                position: relative;
+                top: 0.1rem;
+                content: var(--ico-store);
+                color: #4f6eff;
+                display: inline-block;
+                margin: 0 0.3rem;
+                text-decoration: none; }
+
+/*# sourceMappingURL=home.css.map */

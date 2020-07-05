@@ -1,0 +1,177 @@
+#container {
+  align-items: flex-start !important; }
+
+#list {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+  @media screen and (max-width: 768px) {
+    #list {
+      padding: 0; } }
+  #list div {
+    display: flex;
+    align-items: center; }
+  #list > .head {
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.2); }
+    @media screen and (max-width: 768px) {
+      #list > .head {
+        padding: 1rem 0; } }
+    #list > .head > select {
+      font-size: 0.95rem;
+      outline: none;
+      padding: 0.2rem;
+      margin: 0 1rem; }
+      @media screen and (max-width: 768px) {
+        #list > .head > select {
+          margin: 0 0.5rem; } }
+  #list > .body {
+    flex-direction: column; }
+    #list > .body > .head {
+      padding: 1rem 2rem;
+      width: calc(100% - 4rem);
+      justify-content: space-between; }
+      @media screen and (max-width: 768px) {
+        #list > .body > .head {
+          padding: 1rem 0.4rem; } }
+      #list > .body > .head > .detail {
+        font-size: 1rem; }
+        #list > .body > .head > .detail > span {
+          margin: 0 0.5rem; }
+        #list > .body > .head > .detail > b {
+          color: red;
+          font-size: 1.05rem; }
+      #list > .body > .head > .count {
+        font-size: 0.98rem; }
+        #list > .body > .head > .count > b {
+          margin: 0 0.3rem;
+          color: red; }
+    #list > .body > .body {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 2rem; }
+      @media screen and (max-width: 768px) {
+        #list > .body > .body {
+          padding: 0 0.5rem; } }
+      #list > .body > .body > .goods, #list > .body > .body > .store {
+        transition: all .2s linear;
+        background: white;
+        border: 1px solid #cacaca;
+        position: relative; }
+        #list > .body > .body > .goods:hover, #list > .body > .body > .store:hover {
+          box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2); }
+          #list > .body > .body > .goods:hover > span, #list > .body > .body > .store:hover > span {
+            opacity: 1; }
+      #list > .body > .body > .goods {
+        width: 15rem;
+        border-radius: 0.3rem;
+        margin: 1rem;
+        flex-direction: column;
+        align-items: flex-start; }
+        @media screen and (max-width: 768px) {
+          #list > .body > .body > .goods {
+            width: calc(50% - 2rem - 2px); }
+            #list > .body > .body > .goods img {
+              height: calc(50% - 2rem - 2px); } }
+        #list > .body > .body > .goods > span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.85);
+          transition: all .2s linear;
+          color: white;
+          font-size: 0.9rem;
+          padding: 0 0.2rem; }
+          @media screen and (min-width: 768px) {
+            #list > .body > .body > .goods > span {
+              opacity: 0; } }
+        #list > .body > .body > .goods > a {
+          color: black;
+          text-decoration: none;
+          flex-direction: column; }
+          #list > .body > .body > .goods > a:hover {
+            text-decoration: underline;
+            color: red; }
+          #list > .body > .body > .goods > a > img {
+            width: 100%;
+            height: 15rem;
+            object-fit: contain;
+            border-bottom: 1px solid #bbb; }
+          #list > .body > .body > .goods > a > span {
+            text-align: center;
+            padding: 0.2rem 0;
+            font-size: 0.95rem;
+            line-height: 1.2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; }
+        #list > .body > .body > .goods > .mid {
+          justify-content: space-between;
+          margin: auto 0;
+          padding: 0 0.5rem;
+          width: calc(100% - 1rem); }
+          #list > .body > .body > .goods > .mid > span {
+            font-size: 1.2rem;
+            color: red; }
+        #list > .body > .body > .goods > .bottom {
+          margin-bottom: 0.2rem; }
+          #list > .body > .body > .goods > .bottom > a {
+            font-size: 0.9rem;
+            color: black;
+            text-decoration: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; }
+            #list > .body > .body > .goods > .bottom > a:hover {
+              text-decoration: underline; }
+            #list > .body > .body > .goods > .bottom > a:before {
+              font-family: var(--ico-font);
+              font-size: 1.3rem;
+              font-weight: bold;
+              position: relative;
+              top: 0.1rem;
+              content: var(--ico-store);
+              color: #4f6eff;
+              display: inline-block;
+              margin: 0 0.3rem;
+              text-decoration: none; }
+      #list > .body > .body > .store {
+        height: 10rem;
+        width: 90%;
+        margin: 1rem 5%; }
+        #list > .body > .body > .store > a {
+          height: 100%;
+          width: 10rem; }
+          #list > .body > .body > .store > a > img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            border-right: 1px solid #cecece; }
+        #list > .body > .body > .store > div {
+          flex-direction: column;
+          flex-grow: 1;
+          padding: 1rem 0.5rem; }
+          #list > .body > .body > .store > div > a {
+            text-decoration: none;
+            color: black;
+            font-size: 0.98rem; }
+            #list > .body > .body > .store > div > a:hover {
+              color: #ff4a62;
+              text-decoration: underline; }
+          #list > .body > .body > .store > div > span {
+            font-size: 0.9rem;
+            margin: auto 0 1rem 0;
+            color: #d23c3c; }
+            #list > .body > .body > .store > div > span > span {
+              font-size: 1.2em;
+              margin: 0 0.3rem; }
+  #list > .bottom {
+    padding: 1rem 0;
+    justify-content: center; }
+
+/*# sourceMappingURL=list.css.map */

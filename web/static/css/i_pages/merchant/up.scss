@@ -1,0 +1,512 @@
+@import "../../plugin/public";
+#i-merchant-up{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  div{
+    display: flex;
+    align-items: center;
+  }
+  >.head{
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    @include div_shadow;
+    >div{
+      background: #e5e5e5;
+      border-radius: 0.2rem;
+      padding: 0.2rem 0.4rem;
+      >input{
+        border: none;
+        padding: 0.5rem;
+        font-size: 0.98rem;
+        background: transparent;
+      }
+      >span{
+        cursor: pointer;
+        &:before{
+          font-family: var(--ico-font);
+          content: var(--ico-search);
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  >.body{
+    flex-direction: column;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: flex-start;
+    width: 95%;
+    @include phone_handle {
+      width: 100%;
+    }
+    >div{
+      padding: 1rem;
+      width: calc(100% - 2rem);
+      border-bottom: 1px solid #cbcbcb;
+      >b{
+        width: 5rem;
+        @include phone_handle {
+          width: 3rem;
+        }
+        font-size: 1.05rem;
+        flex-shrink: 0;
+      }
+    }
+    >.cover{
+      >input{
+        display: none;
+      }
+      >span{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+        width: 12rem;
+        border-radius: 0.8rem;
+        border: 0.05rem dashed gray;
+        cursor: pointer;
+        transition: all .1s linear;
+        position: relative;
+        background: white;
+        &:not(.showed):before{
+          font-family: var(--ico-font);
+          content: var(--ico-img);
+          font-size: 6rem;
+        }
+        >span{
+          font-size: 1.1rem;
+        }
+        >img{
+          display: none;
+          object-fit: contain;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+        &.dragin{
+          border-color: red;
+        }
+        &.showed{
+          >span{
+            display: none;
+          }
+          >img{
+            display: unset;
+          }
+        }
+      }
+    }
+    >.title{
+      >textarea{
+        width: 80%;
+        flex-grow: 1;
+        height: 6rem;
+        padding: 0.2rem 0.4rem;
+        font-size: 1rem;
+      }
+    }
+    .cate{
+      >div{
+        flex-grow: 1;
+        position: relative;
+        >span:not(.modify){
+          background: #71ffa0;
+          border-radius: 0.2rem;
+          padding: 0.2rem 0.8rem;
+          margin: 0 0.4rem;
+        }
+        .modify{
+          font-size: 1.6rem;
+          font-weight: bold;
+          border-radius: 0.3rem;
+          padding: 0.1rem 0.4rem;
+          cursor: pointer;
+          &.active{
+            background: #cccccc;
+          }
+          &:before{
+            font-family: var(--ico-font);
+            content: var(--ico-modify);
+          }
+        }
+        .choose-cate{
+          flex-direction: column;
+          display: none;
+          position: absolute;
+          max-width: 100%;
+          left: 0;
+          top: 100%;
+          background: #e8eeff;
+          box-shadow: 0 0.3rem 0.8rem grey;
+          z-index: 1;
+          @include phone_handle {
+            max-width: calc(100% + 3rem);
+            left: -3rem;
+          }
+          >div{
+            &:not(:last-of-type){
+              border-bottom: 1px solid #999;
+            }
+            >b{
+              width: 4rem;
+              font-size: 1rem;
+              flex-shrink: 0;
+              padding: 0 0.2rem;
+            }
+            >div{
+              flex-wrap: wrap;
+              margin: 0.1rem 0;
+              >a{
+                border-radius: 0.2rem;
+                border: 1px solid transparent;
+                cursor: pointer;
+                padding: 0.2rem 0.4rem;
+                margin: 0 0.4rem;
+                font-size: 0.98rem;
+                &:hover{
+                  border: 1px solid black;
+                }
+                &.chosen{
+                  background: #5a4bff;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .price{
+      align-items: flex-start;
+      @include phone_handle {
+        flex-direction: column;
+      }
+      >div{
+        flex-direction: column;
+        flex: 1 1 auto;
+        align-items: flex-start !important;
+        >ul{
+          list-style: none;
+          width: 100%;
+          >li{
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            @include pc_handle{
+              &:hover{
+                >.move > button{
+                  display: unset;
+                }
+              }
+            }
+            span.close{
+              position: absolute;
+              width: 1.4rem;
+              height: 1.4rem;
+              top: -0.7rem;
+              right: -0.7rem;
+              background: white;
+              border-radius: 50%;
+              transition: all .15s linear;
+              &:before{
+                font-family: var(--ico-font);
+                font-size: 1.4rem;
+                cursor: pointer;
+                color: #ff484f;
+                content: var(--ico-close);
+              }
+              &:hover:before{
+                color: #ff1515;
+              }
+            }
+            >div.std{
+              position: relative;
+              >textarea{
+                width: 5rem;
+                height: 3rem;
+                font-size: 1.02rem;
+                border: 1px solid gray;
+                padding: 0.4rem 0 0 0.4rem;
+                &:focus{
+                  border: 1px solid;
+                }
+              }
+              >span{
+                left: -0.7rem;
+                display: none;
+                @include phone_handle {
+                  display: unset;
+                }
+              }
+              &:hover > span{
+                display: unset;
+              }
+            }
+            >div.move{
+              flex-direction: column;
+              margin-left: 0.5rem;
+              width: 1.6rem;
+              flex-shrink: 0;
+              >button{
+                @include pc_handle{
+                  display: none;
+                }
+                padding: 0;
+                border: none;
+                border-radius: 50%;
+                &:before{
+                  background: white;
+                  border-radius: inherit;
+                  color: #a700ff;
+                  content: var(--ico-top);
+                  transition: all .1s linear;
+                  font: {
+                    family: var(--ico-font);
+                    size: 1.6rem;
+                  };
+                }
+                &:hover:before{
+                  color: #7900b9;
+                }
+                &:last-of-type{
+                  transform: rotate(180deg);
+                }
+              }
+            }
+            >div.label{
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              flex: 1 1 auto;
+              margin: 0.6rem 0 0.6rem 1rem;
+              border-left: 1px solid;
+              >label{
+                width: 7rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 0.2rem;
+                border: 1px solid gray;
+                margin: 0.3rem 0.8rem;
+                position: relative;
+                @include phone_handle {
+                  width: calc(50% - 2rem);
+                }
+                >input{
+                  width: 100%;
+                  text-align: center;
+                  background: #dfedff;
+                  border: none;
+                  padding: 0.6rem 0;
+                  font-size: 0.98rem;
+                }
+                >span{
+                  display: none;
+                  @include phone_handle {
+                    display: unset;
+                  }
+                }
+                &:hover > span{
+                  display: unset;
+                }
+              }
+              >button{
+                background: #4f6eff;
+                font-size: 1.2rem;
+                border: none;
+                display: flex;
+                color: white;
+                margin: 0 0.6rem;
+                &:before{
+                  font-family: var(--ico-font);
+                  content: var(--ico-add);
+                }
+                &:hover{
+                  background: #4a57ff;
+                }
+              }
+            }
+          }
+        }
+        >.btn{
+          >button{
+            font-size: 1.05rem;
+            background: #4f6eff;
+            padding: 0.4rem 2rem;
+            border: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            transition: all .1s linear;
+            box-shadow: 0 0 0.3rem grey;
+            &:last-of-type{
+              margin-left: 1rem;
+              background: #6f00ff;
+            }
+            &:before{
+              font-family: var(--ico-font);
+              content: var(--ico-add);
+              font-size: 1.4em;
+              margin: 0 0.3rem;
+            }
+            &:last-of-type:before{
+              content: var(--ico-goods-menu);
+            }
+            &:hover{
+              background: #4a57ff;
+            }
+            &:last-of-type:hover{
+              background: #6300e6;
+            }
+          }
+        }
+        >.set-ps{
+          >.wrap{
+            >.main{
+              display: block;
+              padding: 0 1rem;
+              height: 85%;
+              position: relative;
+              $foot-height: 3rem !global;
+              input{
+                border: 1px solid #636363;
+              }
+              >.body{
+                overflow: auto;
+                height: calc(100% - #{$foot-height+1rem});
+                display: block;
+                padding-top: 0.6rem;
+                >table{
+                  width: 100%;
+                  font-size: 1rem;
+                  border-collapse: collapse;
+                  border: 1px solid;
+                  td{
+                    text-align: center;
+                    &:not(:last-of-type){
+                      border-right: 1px solid #b3b3b3;
+                    }
+                  }
+                  >thead{
+                    background: #4f6eff;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1.06em;
+                    td{
+                      padding: 0.3rem 0;
+                      border-color: white;
+                    }
+                  }
+                  >tbody{
+                    tr{
+                      &:not(:last-of-type){
+                        border-bottom: 1px solid #b3b3b3;
+                      }
+                      &:hover{
+                        background: #f3f3f3;
+                      }
+                      &.active{
+                        background: #ffe4e4;
+                      }
+                    }
+                    td{
+                      padding: 0.5rem 0;
+                      &.name{
+                        >span{
+                          margin: 0 0.2rem;
+                          border-radius: 0.2rem;
+                          background: #7affef;
+                          padding: 0.2rem 0.5rem;
+                        }
+                      }
+                      >input{
+                        width: 4rem;
+                        text-align: center;
+                        padding: 0.3rem 0;
+                      }
+                    }
+                  }
+                }
+              }
+              >.foot{
+                width: 100%;
+                position: absolute;
+                display: flex;
+                bottom: 0;
+                left: 0;
+                height: $foot-height;
+                justify-content: flex-end;
+                background: white;
+                border-radius: inherit;
+                >div{
+                  >span{
+                    font-size: 0.95rem;
+                    margin-right: 0.5rem;
+                  }
+                  >input{
+                    width: 5rem;
+                    padding: 0.3rem;
+                  }
+                }
+                >button{
+                  border: none;
+                  color: white;
+                  font-size: 1.02rem;
+                  margin: 0 0.5rem;
+                  background: #b743ff;
+                  box-shadow: 0 0 0.6rem rgba(86, 0, 255, 0.56);
+                  &:hover{
+                    background: #a43ce4;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .dcb{
+      align-items: flex-start;
+      >textarea{
+        width: 80%;
+        height: 12rem;
+        font-size: 0.98rem;
+        padding: 0.2rem 0.4rem;
+      }
+    }
+  }
+  .submit{
+    margin-bottom: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    >button{
+      background: #ffe059;
+      width: 15rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 0.6rem;
+      &:hover{
+        background: #ffeb8a;
+      }
+      >a{
+        font-size: 1.06rem;
+        font-weight: bold;
+        z-index: 1;
+      }
+      >span{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #b9b6ff;
+      }
+    }
+  }
+}

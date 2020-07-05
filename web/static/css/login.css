@@ -1,0 +1,84 @@
+#container {
+  height: 100%;
+  align-items: flex-start !important; }
+
+#login-div {
+  margin-top: 5rem;
+  width: 20rem;
+  padding: 2rem;
+  border: 1px solid;
+  box-shadow: 0 0 0.8rem gray;
+  background: white; }
+  @media screen and (max-width: 768px) {
+    #login-div {
+      box-shadow: none;
+      border: none;
+      padding: 4rem 0;
+      width: 95%; } }
+  #login-div > div {
+    display: flex; }
+  #login-div #login-head {
+    display: flex;
+    justify-content: center; }
+    #login-div #login-head > button {
+      margin: 0 0.5rem;
+      outline: none;
+      background: #eee;
+      font-size: 1rem;
+      font-weight: bold; }
+      #login-div #login-head > button.active {
+        background: #4f6eff;
+        color: white; }
+  #login-div #login-body {
+    overflow: hidden; }
+    #login-div #login-body > div {
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      transition: left .25s ease-out; }
+      #login-div #login-body > div .login-input {
+        width: 100%;
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center; }
+        #login-div #login-body > div .login-input > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%; }
+          #login-div #login-body > div .login-input > div > * {
+            margin: 1rem 0; }
+          #login-div #login-body > div .login-input > div input {
+            padding: 0.6rem 0.4rem;
+            font-size: 1.05rem; }
+            @media screen and (max-width: 768px) {
+              #login-div #login-body > div .login-input > div input {
+                padding: 0.8rem 0.4rem;
+                font-size: 1.2rem; } }
+          #login-div #login-body > div .login-input > div > .underline-input {
+            width: 90%; }
+          #login-div #login-body > div .login-input > div > .code, #login-div #login-body > div .login-input > div > .submit {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around; }
+            #login-div #login-body > div .login-input > div > .code > button, #login-div #login-body > div .login-input > div > .submit > button {
+              font-size: 1rem; }
+          #login-div #login-body > div .login-input > div > div.code > .underline-input {
+            width: 50%; }
+          #login-div #login-body > div .login-input > div > div.code > button {
+            width: 30%;
+            background: #d6e6ff; }
+          #login-div #login-body > div .login-input > div > div.submit > button {
+            width: 60%;
+            background: #71ffa0; }
+            #login-div #login-body > div .login-input > div > div.submit > button[register] {
+              background: #ffce69; }
+          #login-div #login-body > div .login-input > div > div.submit > a {
+            color: #ff4c20;
+            text-decoration: underline;
+            cursor: pointer; }
+
+/*# sourceMappingURL=login.css.map */

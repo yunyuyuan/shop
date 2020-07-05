@@ -1,0 +1,83 @@
+@import "public";
+
+// 下划线input
+div.underline-input{
+  position: relative;
+  display: flex;
+  >input{
+    width: 100%;
+    background: #ebebeb;
+    border: none;
+    border-radius: 0;
+    &:focus ~ span{
+      left: 0;
+      width: 100%;
+    }
+  }
+  >span{
+    background: black;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: all .35s ease-out;
+  }
+}
+// 弹出框
+.fixed-div{
+  position: fixed;
+  width: 100%;
+  height: calc(100% - #{$head-height});
+  top: $head-height;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity .15s linear;
+  opacity: 1;
+  &.fade-enter, &.fade-leave-to{
+    opacity: 0;
+  }
+  >.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    >div{
+      border-radius: 0.5rem;
+      background: white;
+      width: 50%;
+      box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
+      @include phone_handle{
+        width: 90% !important;
+      }
+    }
+  }
+}
+// 价格b
+.price-yuan{
+  &:before{
+    font-family: var(--ico-font);
+    content: var(--ico-yuan);
+    font-size: 0.9em;
+  }
+}
+// state颜色
+.state-color{
+  &[s='0']{
+    color: #ff6c00;
+  }
+  &[s='1']{
+    color: #423aff;
+  }
+  &[s='2']{
+    color: #2cd600;
+  }
+  &[s='3']{
+    color: #d600a0;
+  }
+  &[s='-1']{
+    color: #494949;
+  }
+}

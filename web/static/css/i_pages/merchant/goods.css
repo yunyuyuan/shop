@@ -1,0 +1,151 @@
+#i-merchant-goods {
+  display: flex;
+  flex-direction: column; }
+  #i-merchant-goods div {
+    display: flex;
+    align-items: center; }
+  #i-merchant-goods > .head {
+    display: flex;
+    padding: 1rem 3rem;
+    position: relative;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.2); }
+    @media screen and (max-width: 768px) {
+      #i-merchant-goods > .head {
+        padding: 1rem; } }
+    #i-merchant-goods > .head > .search {
+      background: #e5e5e5;
+      border-radius: 0.2rem;
+      padding: 0.2rem 0.4rem; }
+      #i-merchant-goods > .head > .search > input {
+        border: none;
+        height: 2rem;
+        font-size: 1rem;
+        width: 100%;
+        background: transparent; }
+      #i-merchant-goods > .head > .search > span {
+        cursor: pointer; }
+        #i-merchant-goods > .head > .search > span:before {
+          font-family: var(--ico-font);
+          content: var(--ico-search);
+          font-size: 1.6rem; }
+    #i-merchant-goods > .head > .remain {
+      position: absolute;
+      top: 100%;
+      width: calc(100% - 6rem); }
+      @media screen and (max-width: 768px) {
+        #i-merchant-goods > .head > .remain {
+          width: calc(100% - 2rem); } }
+    #i-merchant-goods > .head > .del > label {
+      display: flex;
+      align-items: center;
+      margin: 0 0.6rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer; }
+      #i-merchant-goods > .head > .del > label > b {
+        margin-right: 0.3rem; }
+      #i-merchant-goods > .head > .del > label:hover > b {
+        border-color: red; }
+      #i-merchant-goods > .head > .del > label > b {
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 0.2rem;
+        border: 1px solid gray;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        #i-merchant-goods > .head > .del > label > b.active:before {
+          font-family: var(--ico-font);
+          content: var(--ico-gou);
+          font-size: 1.5rem;
+          color: #000fff; }
+      #i-merchant-goods > .head > .del > label > input {
+        display: none; }
+    #i-merchant-goods > .head > .del > button {
+      font-size: 1rem;
+      flex-shrink: 0;
+      font-weight: bold;
+      background: #ff2312;
+      color: white;
+      margin: 0 0.3rem; }
+  #i-merchant-goods > .body > ul {
+    list-style: none;
+    width: 100%;
+    padding: 1rem; }
+    #i-merchant-goods > .body > ul > li {
+      height: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0.5rem 0;
+      border: 1px solid grey;
+      transition: all .1s linear;
+      background: white; }
+      #i-merchant-goods > .body > ul > li:hover {
+        box-shadow: 0 0 0.3rem gray; }
+      #i-merchant-goods > .body > ul > li.select {
+        border: 1px solid #9d00ff; }
+        #i-merchant-goods > .body > ul > li.select > div > label:before {
+          background: #483fff; }
+      #i-merchant-goods > .body > ul > li > a {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0.3rem;
+        text-decoration: none;
+        color: black; }
+        #i-merchant-goods > .body > ul > li > a > img {
+          height: 6rem;
+          width: 6rem;
+          object-fit: contain; }
+        #i-merchant-goods > .body > ul > li > a > span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 4; }
+        #i-merchant-goods > .body > ul > li > a:hover {
+          text-decoration: underline; }
+      #i-merchant-goods > .body > ul > li > div {
+        margin-right: 0.5rem; }
+        #i-merchant-goods > .body > ul > li > div > a {
+          font-size: 0.98rem;
+          margin: 0 0.4rem;
+          cursor: pointer;
+          text-decoration: none;
+          color: black; }
+          #i-merchant-goods > .body > ul > li > div > a:before {
+            font-family: var(--ico-font);
+            font-size: 1.5rem;
+            content: var(--ico-modify); }
+        #i-merchant-goods > .body > ul > li > div > label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          margin-left: 0.3rem;
+          display: flex;
+          align-items: center;
+          cursor: pointer; }
+          #i-merchant-goods > .body > ul > li > div > label:hover > b {
+            border-color: red; }
+          #i-merchant-goods > .body > ul > li > div > label > b {
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
+            border: 1px solid gray;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            #i-merchant-goods > .body > ul > li > div > label > b.active:before {
+              font-family: var(--ico-font);
+              content: var(--ico-gou);
+              font-size: 1.5rem;
+              color: #000fff; }
+          #i-merchant-goods > .body > ul > li > div > label > input {
+            display: none; }
+
+/*# sourceMappingURL=goods.css.map */

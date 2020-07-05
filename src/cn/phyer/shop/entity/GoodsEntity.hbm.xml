@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.phyer.shop.entity.GoodsEntity" table="goods" schema="bishe">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="ownerId">
+            <column name="owner_id" sql-type="int(11)"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="price">
+        <column name="price" sql-type="json"/>
+        </property>
+        <property name="ps">
+            <column name="ps" sql-type="json"/>
+        </property>
+        <property name="dcb">
+            <column name="dcb" sql-type="mediumtext"/>
+        </property>
+        <property name="buyNum">
+            <column name="buy_num" sql-type="int(11)" default="0"/>
+        </property>
+        <property name="favNum">
+            <column name="fav_num" sql-type="int(11)" default="0"/>
+        </property>
+        <property name="star">
+            <column name="star" sql-type="double" precision="-1" default="0.0"/>
+        </property>
+        <property name="cover">
+            <column name="cover" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="cate">
+            <column name="cate" sql-type="json"/>
+        </property>
+        <property name="evaluate">
+            <column name="evaluate" sql-type="json"/>
+        </property>
+    </class>
+</hibernate-mapping>

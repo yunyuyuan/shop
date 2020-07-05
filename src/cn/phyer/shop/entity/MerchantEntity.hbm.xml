@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.phyer.shop.entity.MerchantEntity" table="merchant" schema="bishe">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="name">
+            <column name="name_" sql-type="varchar(16)" length="16"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="pwd">
+            <column name="pwd" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="star">
+            <column name="star" sql-type="double"/>
+        </property>
+        <property name="starNum">
+            <column name="star_num" sql-type="int(11)"/>
+        </property>
+        <property name="favNum">
+            <column name="fav_num" sql-type="int(11)"/>
+        </property>
+        <property name="sellNum">
+            <column name="sell_num" sql-type="int(11)"/>
+        </property>
+        <property name="cover">
+            <column name="cover" sql-type="varchar(256)" length="256"/>
+        </property>
+    </class>
+</hibernate-mapping>

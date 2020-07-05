@@ -1,0 +1,151 @@
+@import "plugin/public";
+#home{
+  display: flex;
+  flex-direction: column;
+  @include phone_handle{
+    width: 100%;
+  }
+  div{
+    display: flex;
+    align-items: center;
+  }
+  >.head{
+    background: white;
+    justify-content: center;
+    padding: 1rem 0;
+    >img{
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  >.body{
+    background: white;
+    padding: 1rem;
+    width: 55rem;
+    @include phone_handle{
+      width: 100%;
+      padding: 1rem 0;
+    }
+    flex-direction: column;
+    justify-content: center;
+    >div{
+      flex-direction: column;
+      >span{
+        padding: 0.5rem 0;
+        background: #c7c6ff;
+        font-size: 1.1rem;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        &:before{
+          margin-right: 0.6rem;
+          font-family: var(--ico-font);
+          font-size: 2rem;
+          content: var(--ico-new);
+        }
+      }
+      &:last-of-type{
+        >span:before{
+          content: var(--ico-hot);
+        }
+      }
+      >div{
+        flex-wrap: wrap;
+        >.goods{
+          width: 15rem;
+          transition: all .2s linear;
+          background: white;
+          border: 1px solid #cacaca;
+          position: relative;
+          &:hover{
+            box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+            >span{
+              opacity: 1;
+            }
+          }
+          @include phone_handle {
+            width: calc(50% - 2rem - 2px);
+            img{
+              height: calc(50% - 2rem - 2px);
+            }
+          }
+          border-radius: 0.3rem;
+          margin: 1rem;
+          flex-direction: column;
+          align-items: flex-start;
+          >span{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.85);
+            @include pc_handle {
+              opacity: 0;
+            }
+            transition: all .2s linear;
+            color: white;
+            font-size: 0.9rem;
+            padding: 0 0.2rem;
+          }
+          >a{
+            color: black;
+            text-decoration: none;
+            flex-direction: column;
+            &:hover{
+              text-decoration: underline;
+              color: red;
+            }
+            >img{
+              width: 100%;
+              height: 15rem;
+              object-fit: contain;
+              border-bottom: 1px solid #bbb;
+            }
+            >span{
+              text-align: center;
+              padding: 0.2rem 0;
+              font-size: 0.95rem;
+              line-height: 1.2rem;
+              @include text-overflow(2);
+            }
+          }
+          >.mid{
+            justify-content: space-between;
+            margin: auto 0;
+            padding: 0 0.5rem;
+            width: calc(100% - 1rem);
+            >span{
+              font-size: 1.2rem;
+              color: red;
+            }
+          }
+          >.bottom{
+            margin-bottom: 0.2rem;
+            >a{
+              font-size: 0.9rem;
+              color: black;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+              @include text-overflow;
+              &:before{
+                font: {
+                  family: var(--ico-font);
+                  size: 1.3rem;
+                  weight: bold;
+                }
+                position: relative;
+                top: 0.1rem;
+                content: var(--ico-store);
+                color: #4f6eff;
+                display: inline-block;
+                margin: 0 0.3rem;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

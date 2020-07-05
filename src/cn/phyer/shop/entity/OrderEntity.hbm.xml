@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.phyer.shop.entity.OrderEntity" table="order_" schema="bishe">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="customerId">
+            <column name="customer_id" sql-type="int(11)"/>
+        </property>
+        <property name="merchantId">
+            <column name="merchant_id" sql-type="int(11)"/>
+        </property>
+        <property name="crtTm">
+            <column name="crt_tm" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="addr">
+            <column name="addr" sql-type="json" not-null="true"/>
+        </property>
+        <property name="price">
+            <column name="price" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="goods">
+            <column name="goods" sql-type="json" not-null="true"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="varchar(8)" length="8" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

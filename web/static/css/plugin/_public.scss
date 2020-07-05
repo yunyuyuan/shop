@@ -1,0 +1,51 @@
+$head-height: 3.5rem;
+@mixin phone_handle {
+  @media screen and (max-width: 768px){
+    @content
+  }
+}
+@mixin pc_handle{
+  @media screen and (min-width: 768px){
+    @content
+  }
+}
+@mixin div_shadow{
+  background: white;
+  box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.2);
+}
+@mixin text-overflow($line: 1){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+@mixin check_label($size: 1.3rem, $font: 1.5rem){
+  @content;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover>b{
+    border-color: red;
+  }
+  >b{
+    width: $size;
+    height: $size;
+    border-radius: 0.2rem;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.active{
+      &:before{
+        font-family: var(--ico-font);
+        content: var(--ico-gou);
+        font-size: $font;
+        color: #000fff;
+      }
+    }
+  }
+  >input{
+    display: none;
+  }
+}

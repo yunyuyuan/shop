@@ -1,0 +1,140 @@
+﻿@import "public";
+#-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $head-height;
+  background: white;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  z-index: 100;
+  >a,&>div>span{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  @at-root #-head-cate{
+    color: blueviolet;
+    font-size: 2rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    &:hover{
+      background: rgb(235, 235, 235);
+    }
+  }
+  >.search{
+    display: flex;
+    align-items: center;
+    border-radius: 0.2rem;
+    margin: 0 0.5rem 0 auto;
+    height: 1.8rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.3rem;
+    background: #e5e5e5;
+    >select{
+      height: 100%;
+      border: 1px solid transparent;
+      border-right: 1px inset gray;
+      font-size: 0.98rem;
+      outline: none;
+      background: transparent;
+    }
+    >input{
+      height: 100%;
+      padding: 0 0.6rem;
+      border-radius: inherit;
+      background: transparent;
+      width: 100%;
+      font-size: 0.96rem;
+      border: none;
+    }
+    >span{
+      font-size: 1.5rem;
+    }
+  }
+  @at-root #-head-cart, #-head-account{
+    text-decoration: none;
+    font-size: 2.1rem;
+    @include pc_handle {
+      padding: 0.5rem;
+    }
+    margin-right: 0.5rem;
+    color: #813aff;
+    transition: all .1s linear;
+    &:hover{
+      color: #8e57ff;
+      background: #eeeeee;
+    }
+  }
+  @each $s in cate,search,cart,account{
+    @at-root #-head-#{$s}:before{
+      font-family: var(--ico-font);
+      content: var(--ico-#{$s});
+    }
+  }
+  @at-root #-head-cate:hover ~ ul,& > ul:hover{
+    display: unset;
+  }
+  >ul{
+    background: #d7f4fa;
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.26);
+    >li{
+      display: flex;
+      padding: 0.25rem 0;
+      &:not(:last-of-type){border-bottom: 1px solid #afafaf};
+      >b{
+        width: 5rem;
+        flex: 0 0 auto;
+        font-size: 1.06em;
+        border-right: 1px solid #868686;
+        margin-left: 0.4rem;
+      }
+      >div{
+        display: flex;
+        flex-wrap: wrap;
+        >a{
+          text-decoration: none;
+          color: black;
+          margin: 0 0.3rem;
+          transition: all .05s;
+          padding: 0.2rem 0.5rem;
+          border-radius: 0.2rem;
+          &:hover{
+            background: #ff714e;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  >.hide-remind{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: white;
+  }
+  >.remind{
+    position: absolute !important;
+    margin-top: 0;
+    z-index: -2;
+  }
+}
+// 公共
+#container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: $head-height;
+  width: 100%;
+  min-height: calc(100% - 3.5rem);
+}

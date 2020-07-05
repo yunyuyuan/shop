@@ -1,0 +1,70 @@
+:root {
+  --s: 15px;
+  --phone: false;
+  --ico-font: 'iconfont-font';
+  --ico-hot: "\e613";
+  --ico-new: "\e72b";
+  --ico-gou: "\e6d4";
+  --ico-tri: "\e602";
+  --ico-top: "\e628";
+  --ico-yuan: "\e600";
+  --ico-logout: "\e770";
+  --ico-goods-menu: "\e60a";
+  --ico-warn: "\e703";
+  --ico-success: "\e65f";
+  --ico-cart: "\e62d";
+  --ico-account: "\e643";
+  --ico-cate: "\e60d";
+  --ico-close: '\e626';
+  --ico-add: '\e6f1';
+  --ico-modify: '\e612';
+  --ico-img: '\e61e';
+  --ico-store: '\e6cd';
+  --ico-goods: '\e611';
+  --ico-evaluate: "\e65b";
+  --ico-up: "\e605";
+  --ico-msg: "\e603";
+  --ico-order: "\e616";
+  --ico-fav: "\e630";
+  --ico-search: "\e610"; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-size: var(--s);
+  height: 100%;
+  width: 100%;
+  background: #f2f2f2; }
+
+button {
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.25rem;
+  transition: all .1s linear;
+  border: 1px solid #cbcbcb;
+  padding: 0.3rem 0.6rem; }
+  button:disabled {
+    background: #dcdcdc !important;
+    color: #0d0d0d !important;
+    cursor: not-allowed; }
+
+input, textarea {
+  outline: none;
+  resize: none;
+  transition: box-shadow .1s linear;
+  border-radius: 0.25rem; }
+
+@font-face {
+  font-family: "iconfont-font";
+  src: url("/static/font/iconfont/iconfont.eot");
+  src: url("/static/font/iconfont/iconfont.eot?#iefix") format("embedded-opentype"), url("/static/font/iconfont/iconfont.woff2") format("woff2"), url("/static/font/iconfont/iconfont.woff") format("woff"), url("/static/font/iconfont/iconfont.ttf") format("truetype"), url("/static/font/iconfont/iconfont.svg#iconfont-font") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@media screen and (max-width: 768px) {
+  :root {
+    --s: 13px;
+    --phone: true; } }
+
+/*# sourceMappingURL=all_need.css.map */

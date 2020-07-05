@@ -1,0 +1,206 @@
+@import "plugin/public";
+#container{
+  align-items: flex-start !important;
+}
+#list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include phone_handle {
+    padding: 0;
+  }
+  div{
+    display: flex;
+    align-items: center;
+  }
+  >.head{
+    padding: 1rem 2rem;
+    @include div_shadow;
+    @include phone_handle {
+      padding: 1rem 0;
+    }
+    >select{
+      font-size: 0.95rem;
+      outline: none;
+      padding: 0.2rem;
+      margin: 0 1rem;
+      @include phone_handle {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+  >.body{
+    flex-direction: column;
+    >.head{
+      padding: 1rem 2rem;
+      width: calc(100% - 4rem);
+      justify-content: space-between;
+      @include phone_handle{
+        padding: 1rem 0.4rem;
+      }
+      >.detail{
+        font-size: 1rem;
+        >span{
+          margin: 0 0.5rem;
+        }
+        >b{
+          color: red;
+          font-size: 1.05rem;
+        }
+      }
+      >.count{
+        font-size: 0.98rem;
+        >b{
+          margin: 0 0.3rem;
+          color: red;
+        }
+      }
+    }
+    >.body{
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 2rem;
+      @include phone_handle {
+        padding: 0 0.5rem;
+      }
+      >.goods,>.store{
+        transition: all .2s linear;
+        background: white;
+        border: 1px solid #cacaca;
+        position: relative;
+        &:hover{
+          box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+          >span{
+            opacity: 1;
+          }
+        }
+      }
+      >.goods{
+        width: 15rem;
+        @include phone_handle {
+          width: calc(50% - 2rem - 2px);
+          img{
+            height: calc(50% - 2rem - 2px);
+          }
+        }
+        border-radius: 0.3rem;
+        margin: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        >span{
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.85);
+          @include pc_handle {
+            opacity: 0;
+          }
+          transition: all .2s linear;
+          color: white;
+          font-size: 0.9rem;
+          padding: 0 0.2rem;
+        }
+        >a{
+          color: black;
+          text-decoration: none;
+          flex-direction: column;
+          &:hover{
+            text-decoration: underline;
+            color: red;
+          }
+          >img{
+            width: 100%;
+            height: 15rem;
+            object-fit: contain;
+            border-bottom: 1px solid #bbb;
+          }
+          >span{
+            text-align: center;
+            padding: 0.2rem 0;
+            font-size: 0.95rem;
+            line-height: 1.2rem;
+            @include text-overflow(2);
+          }
+        }
+        >.mid{
+          justify-content: space-between;
+          margin: auto 0;
+          padding: 0 0.5rem;
+          width: calc(100% - 1rem);
+          >span{
+            font-size: 1.2rem;
+            color: red;
+          }
+        }
+        >.bottom{
+          margin-bottom: 0.2rem;
+          >a{
+            font-size: 0.9rem;
+            color: black;
+            text-decoration: none;
+            &:hover{
+              text-decoration: underline;
+            }
+            @include text-overflow;
+            &:before{
+              font: {
+                family: var(--ico-font);
+                size: 1.3rem;
+                weight: bold;
+              }
+              position: relative;
+              top: 0.1rem;
+              content: var(--ico-store);
+              color: #4f6eff;
+              display: inline-block;
+              margin: 0 0.3rem;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      >.store{
+        height: 10rem;
+        width: 90%;
+        margin: 1rem 5%;
+        >a{
+          height: 100%;
+          width: 10rem;
+          >img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            border-right: 1px solid #cecece;
+          }
+        }
+        >div{
+          flex-direction: column;
+          flex-grow: 1;
+          padding: 1rem 0.5rem;
+          >a{
+            text-decoration: none;
+            color: black;
+            font-size: 0.98rem;
+            &:hover{
+              color: #ff4a62;
+              text-decoration: underline;
+            }
+          }
+          >span{
+            font-size: 0.9rem;
+            margin: auto 0 1rem 0;
+            color: #d23c3c;
+            >span{
+              font-size: 1.2em;
+              margin: 0 0.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  >.bottom{
+    padding: 1rem 0;
+    justify-content: center;
+  }
+}

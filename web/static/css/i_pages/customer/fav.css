@@ -1,0 +1,130 @@
+#i-fav div {
+  display: flex;
+  align-items: center; }
+#i-fav > .head {
+  justify-content: center; }
+  #i-fav > .head > b {
+    margin: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.2rem;
+    cursor: pointer; }
+    #i-fav > .head > b:before {
+      font-family: var(--ico-font);
+      font-size: 2rem;
+      margin: 0 0.4rem; }
+    #i-fav > .head > b.goods:before {
+      content: var(--ico-goods); }
+    #i-fav > .head > b.store:before {
+      content: var(--ico-store); }
+    #i-fav > .head > b:hover {
+      background: #d7d7d7; }
+    #i-fav > .head > b.active {
+      background: #81ffa7; }
+#i-fav > .body {
+  background: white;
+  flex-direction: column;
+  align-items: self-start; }
+  #i-fav > .body > .head {
+    padding: 0.8rem 0;
+    width: 100%; }
+    #i-fav > .body > .head > span {
+      font-size: 1.02rem;
+      padding-left: 0.6rem; }
+      #i-fav > .body > .head > span > b {
+        margin: 0 0.3rem;
+        font-size: 1.1em;
+        color: red; }
+    #i-fav > .body > .head > div {
+      margin: 0 0.8rem 0 auto; }
+      #i-fav > .body > .head > div > label {
+        display: flex;
+        align-items: center;
+        cursor: pointer; }
+        #i-fav > .body > .head > div > label > b {
+          margin-right: 0.3rem; }
+        #i-fav > .body > .head > div > label:hover > b {
+          border-color: red; }
+        #i-fav > .body > .head > div > label > b {
+          width: 1.3rem;
+          height: 1.3rem;
+          border-radius: 0.2rem;
+          border: 1px solid gray;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #i-fav > .body > .head > div > label > b.active:before {
+            font-family: var(--ico-font);
+            content: var(--ico-gou);
+            font-size: 1.5rem;
+            color: #000fff; }
+        #i-fav > .body > .head > div > label > input {
+          display: none; }
+      #i-fav > .body > .head > div > button {
+        font-size: 1rem;
+        background: #ff4346;
+        color: white;
+        margin: 0 0.3rem; }
+        #i-fav > .body > .head > div > button:hover {
+          background: #ff1712; }
+  #i-fav > .body > ul {
+    width: calc(100% - 2rem);
+    list-style: none;
+    padding: 1rem;
+    border-top: 1px solid #7c7c7c;
+    border-bottom: 1px solid #7c7c7c; }
+    #i-fav > .body > ul > li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0; }
+      #i-fav > .body > ul > li:not(:last-of-type) {
+        border-bottom: 1px solid #b8b8b8; }
+      #i-fav > .body > ul > li > img {
+        width: 7rem;
+        height: 7rem;
+        object-fit: contain;
+        border: 1px solid #c5c5c5; }
+      #i-fav > .body > ul > li > a {
+        text-decoration: none;
+        color: black;
+        margin: 0 auto 0 0.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4; }
+        #i-fav > .body > ul > li > a:hover {
+          color: red;
+          text-decoration: underline; }
+      #i-fav > .body > ul > li > label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0.2rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer; }
+        #i-fav > .body > ul > li > label:hover > b {
+          border-color: red; }
+        #i-fav > .body > ul > li > label > b {
+          width: 1.3rem;
+          height: 1.3rem;
+          border-radius: 0.2rem;
+          border: 1px solid gray;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #i-fav > .body > ul > li > label > b.active:before {
+            font-family: var(--ico-font);
+            content: var(--ico-gou);
+            font-size: 1.5rem;
+            color: #000fff; }
+        #i-fav > .body > ul > li > label > input {
+          display: none; }
+  #i-fav > .body > .turn-page {
+    margin: 0 auto; }
+
+/*# sourceMappingURL=fav.css.map */

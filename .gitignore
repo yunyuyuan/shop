@@ -1,0 +1,7 @@
+/.idea/
+/out/*
+/web/static/img/customer/*
+/web/static/img/goods/*
+/web/static/img/store/*
+/lib/*
+/shop.iml

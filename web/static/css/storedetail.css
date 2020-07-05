@@ -1,0 +1,161 @@
+#container {
+  align-items: flex-start !important; }
+
+#store-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  width: 100%;
+  margin: 1.5rem 0;
+  max-width: 75rem; }
+  #store-detail div {
+    display: flex;
+    align-items: center; }
+  #store-detail > div {
+    background: white;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: calc(100% - 2rem); }
+    #store-detail > div.head {
+      max-width: 50rem; }
+      #store-detail > div.head > img {
+        width: 12rem;
+        height: 12rem;
+        object-fit: contain;
+        border: 1px solid gray; }
+      #store-detail > div.head > .detail {
+        flex-direction: column;
+        flex-grow: 1;
+        margin: 0 1rem; }
+        #store-detail > div.head > .detail > * {
+          margin: 0.5rem 0; }
+        #store-detail > div.head > .detail > .name {
+          font-size: 1.08rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2; }
+        #store-detail > div.head > .detail > .num-info {
+          align-items: center; }
+          #store-detail > div.head > .detail > .num-info > span {
+            font-size: 0.95rem;
+            color: #575757;
+            padding: 0 0.8rem; }
+            #store-detail > div.head > .detail > .num-info > span:last-of-type {
+              border-left: 1px solid gray; }
+            #store-detail > div.head > .detail > .num-info > span > b {
+              margin: 0 0.3rem;
+              color: black; }
+        #store-detail > div.head > .detail > .star-info > b {
+          margin-left: 0.5rem;
+          font-size: 1.3rem;
+          color: #ffa124; }
+        #store-detail > div.head > .detail > .star-info > span {
+          margin-left: 0.8rem;
+          color: #575757; }
+          #store-detail > div.head > .detail > .star-info > span > b {
+            color: black;
+            margin: 0 0.3rem; }
+        #store-detail > div.head > .detail > button {
+          margin: 0 auto;
+          background: #4f6eff;
+          color: white;
+          font-size: 1.05rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          padding: 0.5rem 1.2rem;
+          width: 8rem; }
+          #store-detail > div.head > .detail > button:before {
+            font-family: var(--ico-font);
+            content: var(--ico-fav);
+            font-size: 1.2rem; }
+          #store-detail > div.head > .detail > button:hover {
+            background: #4764e7; }
+          #store-detail > div.head > .detail > button.faved {
+            background: #cccccc;
+            color: black; }
+            #store-detail > div.head > .detail > button.faved:hover {
+              background: #b7b7b7; }
+    #store-detail > div.body {
+      flex-direction: column;
+      max-width: 100rem; }
+      #store-detail > div.body > div {
+        width: 100%; }
+      #store-detail > div.body > .head {
+        margin: 1rem 0;
+        flex-wrap: wrap; }
+        @media screen and (max-width: 768px) {
+          #store-detail > div.body > .head {
+            justify-content: center; } }
+        #store-detail > div.body > .head > select {
+          padding: 0.2rem 0.3rem;
+          margin: 0 0.5rem; }
+        #store-detail > div.body > .head > .search {
+          display: flex;
+          border-radius: 0.2rem;
+          background: #e5e5e5;
+          padding: 0.4rem; }
+          #store-detail > div.body > .head > .search > input {
+            background: transparent;
+            font-size: 1rem;
+            border: none; }
+          #store-detail > div.body > .head > .search > span:before {
+            font-family: var(--ico-font);
+            content: var(--ico-search);
+            font-size: 1.5rem;
+            cursor: pointer; }
+        #store-detail > div.body > .head > span {
+          margin: 0 0.2rem 0 auto;
+          font-size: 0.95rem; }
+          @media screen and (max-width: 768px) {
+            #store-detail > div.body > .head > span {
+              width: 100%;
+              text-align: center;
+              margin: 0.5rem 0 0 0; } }
+          #store-detail > div.body > .head > span > b {
+            font-size: 1.1em;
+            color: #ff3738;
+            margin: 0 0.3rem; }
+      #store-detail > div.body > .body {
+        flex-direction: column; }
+        #store-detail > div.body > .body > table {
+          border-collapse: collapse;
+          border: 1px solid #6e6e6e;
+          border-radius: 0.6rem;
+          width: 100%; }
+          #store-detail > div.body > .body > table tr {
+            border-bottom: 1px solid gray; }
+            #store-detail > div.body > .body > table tr > td {
+              max-width: 50%;
+              text-align: center; }
+              #store-detail > div.body > .body > table tr > td > .star {
+                margin: 0 auto; }
+              #store-detail > div.body > .body > table tr > td > img {
+                width: 6rem;
+                height: 6rem;
+                object-fit: contain;
+                border: 1px solid gray; }
+              #store-detail > div.body > .body > table tr > td > a {
+                text-decoration: none;
+                color: black;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4; }
+                #store-detail > div.body > .body > table tr > td > a:hover {
+                  color: #ff2f2f;
+                  text-decoration: underline; }
+          #store-detail > div.body > .body > table > thead {
+            background: #4f6eff;
+            color: white; }
+            #store-detail > div.body > .body > table > thead td {
+              padding: 0.5rem 0; }
+        #store-detail > div.body > .body > .turn-page {
+          width: 100%; }
+
+/*# sourceMappingURL=storedetail.css.map */

@@ -1,0 +1,136 @@
+@import "../../plugin/public";
+#i-merchant-goods{
+  display: flex;
+  flex-direction: column;
+  div{
+    display: flex;
+    align-items: center;
+  }
+  >.head{
+    display: flex;
+    padding: 1rem 3rem;
+    position: relative;
+    justify-content: space-between;
+    @include div_shadow;
+    @include phone_handle {
+      padding: 1rem;
+    }
+    >.search{
+      background: #e5e5e5;
+      border-radius: 0.2rem;
+      padding: 0.2rem 0.4rem;
+      >input{
+        border: none;
+        height: 2rem;
+        font-size: 1rem;
+        width: 100%;
+        background: transparent;
+      }
+      >span{
+        cursor: pointer;
+        &:before{
+          font-family: var(--ico-font);
+          content: var(--ico-search);
+          font-size: 1.6rem;
+        }
+      }
+    }
+    >.remain{
+      position: absolute;
+      top: 100%;
+      width: calc(100% - 6rem);
+      @include phone_handle {
+        width: calc(100% - 2rem);
+      }
+    }
+    >.del{
+      >label{
+        display: flex;
+        align-items: center;
+        margin: 0 0.6rem;
+        @include check_label{
+          >b{
+            margin-right: 0.3rem;
+          }
+        };
+      }
+      >button{
+        font-size: 1rem;
+        flex-shrink: 0;
+        font-weight: bold;
+        background: #ff2312;
+        color: white;
+        margin: 0 0.3rem;
+      }
+    }
+  }
+  >.body{
+    >ul{
+      list-style: none;
+      width: 100%;
+      padding: 1rem;
+      >li{
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+        border: 1px solid grey;
+        transition: all .1s linear;
+        background: white;
+        &:hover{
+          box-shadow: 0 0 0.3rem gray;
+        }
+        &.select{
+          border: 1px solid #9d00ff;
+          >div>label:before{
+            background: #483fff;
+          }
+        }
+        >a{
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding: 0.3rem;
+          text-decoration: none;
+          color: black;
+          >img{
+            height: 6rem;
+            width: 6rem;
+            object-fit: contain;
+          }
+          >span{
+            @include text-overflow(4);
+          }
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        >div{
+          margin-right: 0.5rem;
+          >a{
+            font-size: 0.98rem;
+            margin: 0 0.4rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            &:before{
+              font-family: var(--ico-font);
+              font-size: 1.5rem;
+              content: var(--ico-modify);
+            }
+          }
+          >label{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 0.3rem;
+            @include check_label;
+          }
+        }
+      }
+    }
+  }
+}

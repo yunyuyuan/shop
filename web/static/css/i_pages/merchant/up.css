@@ -1,0 +1,395 @@
+#i-merchant-up {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  #i-merchant-up div {
+    display: flex;
+    align-items: center; }
+  #i-merchant-up > .head {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.2); }
+    #i-merchant-up > .head > div {
+      background: #e5e5e5;
+      border-radius: 0.2rem;
+      padding: 0.2rem 0.4rem; }
+      #i-merchant-up > .head > div > input {
+        border: none;
+        padding: 0.5rem;
+        font-size: 0.98rem;
+        background: transparent; }
+      #i-merchant-up > .head > div > span {
+        cursor: pointer; }
+        #i-merchant-up > .head > div > span:before {
+          font-family: var(--ico-font);
+          content: var(--ico-search);
+          font-size: 1.6rem; }
+  #i-merchant-up > .body {
+    flex-direction: column;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: flex-start;
+    width: 95%; }
+    @media screen and (max-width: 768px) {
+      #i-merchant-up > .body {
+        width: 100%; } }
+    #i-merchant-up > .body > div {
+      padding: 1rem;
+      width: calc(100% - 2rem);
+      border-bottom: 1px solid #cbcbcb; }
+      #i-merchant-up > .body > div > b {
+        width: 5rem;
+        font-size: 1.05rem;
+        flex-shrink: 0; }
+        @media screen and (max-width: 768px) {
+          #i-merchant-up > .body > div > b {
+            width: 3rem; } }
+    #i-merchant-up > .body > .cover > input {
+      display: none; }
+    #i-merchant-up > .body > .cover > span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 10rem;
+      width: 12rem;
+      border-radius: 0.8rem;
+      border: 0.05rem dashed gray;
+      cursor: pointer;
+      transition: all .1s linear;
+      position: relative;
+      background: white; }
+      #i-merchant-up > .body > .cover > span:not(.showed):before {
+        font-family: var(--ico-font);
+        content: var(--ico-img);
+        font-size: 6rem; }
+      #i-merchant-up > .body > .cover > span > span {
+        font-size: 1.1rem; }
+      #i-merchant-up > .body > .cover > span > img {
+        display: none;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%; }
+      #i-merchant-up > .body > .cover > span.dragin {
+        border-color: red; }
+      #i-merchant-up > .body > .cover > span.showed > span {
+        display: none; }
+      #i-merchant-up > .body > .cover > span.showed > img {
+        display: unset; }
+    #i-merchant-up > .body > .title > textarea {
+      width: 80%;
+      flex-grow: 1;
+      height: 6rem;
+      padding: 0.2rem 0.4rem;
+      font-size: 1rem; }
+    #i-merchant-up > .body .cate > div {
+      flex-grow: 1;
+      position: relative; }
+      #i-merchant-up > .body .cate > div > span:not(.modify) {
+        background: #71ffa0;
+        border-radius: 0.2rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0 0.4rem; }
+      #i-merchant-up > .body .cate > div .modify {
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0.3rem;
+        padding: 0.1rem 0.4rem;
+        cursor: pointer; }
+        #i-merchant-up > .body .cate > div .modify.active {
+          background: #cccccc; }
+        #i-merchant-up > .body .cate > div .modify:before {
+          font-family: var(--ico-font);
+          content: var(--ico-modify); }
+      #i-merchant-up > .body .cate > div .choose-cate {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        max-width: 100%;
+        left: 0;
+        top: 100%;
+        background: #e8eeff;
+        box-shadow: 0 0.3rem 0.8rem grey;
+        z-index: 1; }
+        @media screen and (max-width: 768px) {
+          #i-merchant-up > .body .cate > div .choose-cate {
+            max-width: calc(100% + 3rem);
+            left: -3rem; } }
+        #i-merchant-up > .body .cate > div .choose-cate > div:not(:last-of-type) {
+          border-bottom: 1px solid #999; }
+        #i-merchant-up > .body .cate > div .choose-cate > div > b {
+          width: 4rem;
+          font-size: 1rem;
+          flex-shrink: 0;
+          padding: 0 0.2rem; }
+        #i-merchant-up > .body .cate > div .choose-cate > div > div {
+          flex-wrap: wrap;
+          margin: 0.1rem 0; }
+          #i-merchant-up > .body .cate > div .choose-cate > div > div > a {
+            border-radius: 0.2rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            padding: 0.2rem 0.4rem;
+            margin: 0 0.4rem;
+            font-size: 0.98rem; }
+            #i-merchant-up > .body .cate > div .choose-cate > div > div > a:hover {
+              border: 1px solid black; }
+            #i-merchant-up > .body .cate > div .choose-cate > div > div > a.chosen {
+              background: #5a4bff;
+              color: white; }
+    #i-merchant-up > .body .price {
+      align-items: flex-start; }
+      @media screen and (max-width: 768px) {
+        #i-merchant-up > .body .price {
+          flex-direction: column; } }
+      #i-merchant-up > .body .price > div {
+        flex-direction: column;
+        flex: 1 1 auto;
+        align-items: flex-start !important; }
+        #i-merchant-up > .body .price > div > ul {
+          list-style: none;
+          width: 100%; }
+          #i-merchant-up > .body .price > div > ul > li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.6rem; }
+            @media screen and (min-width: 768px) {
+              #i-merchant-up > .body .price > div > ul > li:hover > .move > button {
+                display: unset; } }
+            #i-merchant-up > .body .price > div > ul > li span.close {
+              position: absolute;
+              width: 1.4rem;
+              height: 1.4rem;
+              top: -0.7rem;
+              right: -0.7rem;
+              background: white;
+              border-radius: 50%;
+              transition: all .15s linear; }
+              #i-merchant-up > .body .price > div > ul > li span.close:before {
+                font-family: var(--ico-font);
+                font-size: 1.4rem;
+                cursor: pointer;
+                color: #ff484f;
+                content: var(--ico-close); }
+              #i-merchant-up > .body .price > div > ul > li span.close:hover:before {
+                color: #ff1515; }
+            #i-merchant-up > .body .price > div > ul > li > div.std {
+              position: relative; }
+              #i-merchant-up > .body .price > div > ul > li > div.std > textarea {
+                width: 5rem;
+                height: 3rem;
+                font-size: 1.02rem;
+                border: 1px solid gray;
+                padding: 0.4rem 0 0 0.4rem; }
+                #i-merchant-up > .body .price > div > ul > li > div.std > textarea:focus {
+                  border: 1px solid; }
+              #i-merchant-up > .body .price > div > ul > li > div.std > span {
+                left: -0.7rem;
+                display: none; }
+                @media screen and (max-width: 768px) {
+                  #i-merchant-up > .body .price > div > ul > li > div.std > span {
+                    display: unset; } }
+              #i-merchant-up > .body .price > div > ul > li > div.std:hover > span {
+                display: unset; }
+            #i-merchant-up > .body .price > div > ul > li > div.move {
+              flex-direction: column;
+              margin-left: 0.5rem;
+              width: 1.6rem;
+              flex-shrink: 0; }
+              #i-merchant-up > .body .price > div > ul > li > div.move > button {
+                padding: 0;
+                border: none;
+                border-radius: 50%; }
+                @media screen and (min-width: 768px) {
+                  #i-merchant-up > .body .price > div > ul > li > div.move > button {
+                    display: none; } }
+                #i-merchant-up > .body .price > div > ul > li > div.move > button:before {
+                  background: white;
+                  border-radius: inherit;
+                  color: #a700ff;
+                  content: var(--ico-top);
+                  transition: all .1s linear;
+                  font-family: var(--ico-font);
+                  font-size: 1.6rem; }
+                #i-merchant-up > .body .price > div > ul > li > div.move > button:hover:before {
+                  color: #7900b9; }
+                #i-merchant-up > .body .price > div > ul > li > div.move > button:last-of-type {
+                  transform: rotate(180deg); }
+            #i-merchant-up > .body .price > div > ul > li > div.label {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              flex: 1 1 auto;
+              margin: 0.6rem 0 0.6rem 1rem;
+              border-left: 1px solid; }
+              #i-merchant-up > .body .price > div > ul > li > div.label > label {
+                width: 7rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 0.2rem;
+                border: 1px solid gray;
+                margin: 0.3rem 0.8rem;
+                position: relative; }
+                @media screen and (max-width: 768px) {
+                  #i-merchant-up > .body .price > div > ul > li > div.label > label {
+                    width: calc(50% - 2rem); } }
+                #i-merchant-up > .body .price > div > ul > li > div.label > label > input {
+                  width: 100%;
+                  text-align: center;
+                  background: #dfedff;
+                  border: none;
+                  padding: 0.6rem 0;
+                  font-size: 0.98rem; }
+                #i-merchant-up > .body .price > div > ul > li > div.label > label > span {
+                  display: none; }
+                  @media screen and (max-width: 768px) {
+                    #i-merchant-up > .body .price > div > ul > li > div.label > label > span {
+                      display: unset; } }
+                #i-merchant-up > .body .price > div > ul > li > div.label > label:hover > span {
+                  display: unset; }
+              #i-merchant-up > .body .price > div > ul > li > div.label > button {
+                background: #4f6eff;
+                font-size: 1.2rem;
+                border: none;
+                display: flex;
+                color: white;
+                margin: 0 0.6rem; }
+                #i-merchant-up > .body .price > div > ul > li > div.label > button:before {
+                  font-family: var(--ico-font);
+                  content: var(--ico-add); }
+                #i-merchant-up > .body .price > div > ul > li > div.label > button:hover {
+                  background: #4a57ff; }
+        #i-merchant-up > .body .price > div > .btn > button {
+          font-size: 1.05rem;
+          background: #4f6eff;
+          padding: 0.4rem 2rem;
+          border: none;
+          color: white;
+          display: flex;
+          justify-content: center;
+          transition: all .1s linear;
+          box-shadow: 0 0 0.3rem grey; }
+          #i-merchant-up > .body .price > div > .btn > button:last-of-type {
+            margin-left: 1rem;
+            background: #6f00ff; }
+          #i-merchant-up > .body .price > div > .btn > button:before {
+            font-family: var(--ico-font);
+            content: var(--ico-add);
+            font-size: 1.4em;
+            margin: 0 0.3rem; }
+          #i-merchant-up > .body .price > div > .btn > button:last-of-type:before {
+            content: var(--ico-goods-menu); }
+          #i-merchant-up > .body .price > div > .btn > button:hover {
+            background: #4a57ff; }
+          #i-merchant-up > .body .price > div > .btn > button:last-of-type:hover {
+            background: #6300e6; }
+        #i-merchant-up > .body .price > div > .set-ps > .wrap > .main {
+          display: block;
+          padding: 0 1rem;
+          height: 85%;
+          position: relative; }
+          #i-merchant-up > .body .price > div > .set-ps > .wrap > .main input {
+            border: 1px solid #636363; }
+          #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body {
+            overflow: auto;
+            height: calc(100% - 4rem);
+            display: block;
+            padding-top: 0.6rem; }
+            #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table {
+              width: 100%;
+              font-size: 1rem;
+              border-collapse: collapse;
+              border: 1px solid; }
+              #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table td {
+                text-align: center; }
+                #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table td:not(:last-of-type) {
+                  border-right: 1px solid #b3b3b3; }
+              #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > thead {
+                background: #4f6eff;
+                color: white;
+                font-weight: bold;
+                font-size: 1.06em; }
+                #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > thead td {
+                  padding: 0.3rem 0;
+                  border-color: white; }
+              #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > tbody tr:not(:last-of-type) {
+                border-bottom: 1px solid #b3b3b3; }
+              #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > tbody tr:hover {
+                background: #f3f3f3; }
+              #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > tbody tr.active {
+                background: #ffe4e4; }
+              #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > tbody td {
+                padding: 0.5rem 0; }
+                #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > tbody td.name > span {
+                  margin: 0 0.2rem;
+                  border-radius: 0.2rem;
+                  background: #7affef;
+                  padding: 0.2rem 0.5rem; }
+                #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .body > table > tbody td > input {
+                  width: 4rem;
+                  text-align: center;
+                  padding: 0.3rem 0; }
+          #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .foot {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            left: 0;
+            height: 3rem;
+            justify-content: flex-end;
+            background: white;
+            border-radius: inherit; }
+            #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .foot > div > span {
+              font-size: 0.95rem;
+              margin-right: 0.5rem; }
+            #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .foot > div > input {
+              width: 5rem;
+              padding: 0.3rem; }
+            #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .foot > button {
+              border: none;
+              color: white;
+              font-size: 1.02rem;
+              margin: 0 0.5rem;
+              background: #b743ff;
+              box-shadow: 0 0 0.6rem rgba(86, 0, 255, 0.56); }
+              #i-merchant-up > .body .price > div > .set-ps > .wrap > .main > .foot > button:hover {
+                background: #a43ce4; }
+    #i-merchant-up > .body .dcb {
+      align-items: flex-start; }
+      #i-merchant-up > .body .dcb > textarea {
+        width: 80%;
+        height: 12rem;
+        font-size: 0.98rem;
+        padding: 0.2rem 0.4rem; }
+  #i-merchant-up .submit {
+    margin-bottom: 3rem;
+    flex-direction: column;
+    justify-content: center; }
+    #i-merchant-up .submit > button {
+      background: #ffe059;
+      width: 15rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 0.6rem; }
+      #i-merchant-up .submit > button:hover {
+        background: #ffeb8a; }
+      #i-merchant-up .submit > button > a {
+        font-size: 1.06rem;
+        font-weight: bold;
+        z-index: 1; }
+      #i-merchant-up .submit > button > span {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #b9b6ff; }
+
+/*# sourceMappingURL=up.css.map */

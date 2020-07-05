@@ -1,0 +1,108 @@
+@import "plugin/public";
+#container{
+  height: 100%;
+  align-items: flex-start !important;
+}
+#login-div{
+  margin-top: 5rem;
+  width: 20rem;
+  padding: 2rem;
+  border: 1px solid;
+  box-shadow: 0 0 0.8rem gray;
+  background: white;
+  @include phone_handle {
+    box-shadow: none;
+    border: none;
+    padding: 4rem 0;
+    width: 95%;
+  }
+  >div{
+    display: flex
+  }
+  #login-head{
+    display: flex;
+    justify-content: center;
+    >button{
+      margin: 0 0.5rem;
+      outline: none;
+      background: #eee;
+      font: {
+        size: 1rem;
+        weight: bold;
+      };
+      &.active{
+        background: #4f6eff;
+        color: white;
+      }
+    }
+  }
+  #login-body{
+    overflow: hidden;
+    >div{
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      transition: left .25s ease-out;
+      .login-input{
+        width: 100%;
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        >div{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          >*{
+            margin: 1rem 0;
+          }
+          input{
+            padding: 0.6rem 0.4rem;
+            font-size: 1.05rem;
+            @include phone_handle {
+              padding: 0.8rem 0.4rem;
+              font-size: 1.2rem;
+            }
+          }
+          >.underline-input{
+            width: 90%;
+          }
+          >.code, >.submit{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            >button{
+              font-size: 1rem;
+            }
+          }
+          >div.code{
+            >.underline-input{
+              width: 50%;
+            }
+            >button{
+              width: 30%;
+              background: #d6e6ff;
+            }
+          }
+          >div.submit{
+            >button{
+              width: 60%;
+              background: #71ffa0;
+              &[register]{
+                background: #ffce69;
+              }
+            }
+            >a{
+              color: #ff4c20;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
